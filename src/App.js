@@ -8,32 +8,34 @@ import SignUpForm from "./pages/auth/SignUpForm";
 import CategoryBar from "./components/CategoryBar";
 import ReviewCreateForm from "./pages/reviews/ReviewCreateForm";
 import ReviewPage from "./pages/reviews/ReviewPage";
-
+import ReviewsPage from "./pages/reviews/ReviewsPage";
+import { useCurrentUser } from "./contexts/CurrentUserContext";
 
 function App() {
+  const currentUser = useCurrentUser();
+  const profile_id = currentUser?.profile_id || "";
+
   return (
     <div className={styles.App}>
       <NavBar />
       <CategoryBar />
       <Container className={styles.Main}>
         <Switch>
-          <Route
+        <Route
             exact
             path="/"
             render={() => (
-              <h1>Home Page</h1>
-              // <ReviewsPage message="No results found. Adjust the search keyword." />
+              <ReviewsPage message="No results found. Adjust the search keyword." />
             )}
           />
           <Route
             exact
-            path="/saved"
+            path="/keep"
             render={() => (
-              <h1>Saved Reviews</h1>
-              // <ReviewsPage
-              //   message="No results found. Adjust the search keyword or follow a user."
-              //   filter={`owner__followed__owner__profile=${profile_id}&`}
-              // />
+              <ReviewsPage
+                message="No results found. Adjust the search keyword or save a review."
+                filter={`keep__owner__profile=${profile_id}&ordering=-keep__created_at&`}
+              />
             )}
           />
           <Route exact path="/signin" render={() => <SignInForm />} />
