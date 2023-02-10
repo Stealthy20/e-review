@@ -2,9 +2,9 @@ import React from "react";
 import styles from "../styles/CategoryBar.module.css";
 import { NavLink } from "react-router-dom";
 
-const Sidebar = () => {
+const CategoryBar = () => {
   return (
-    <div className={styles.sidebar} >
+    <div className={styles.categorybar} >
           <NavLink
             exact
             to="/"
@@ -12,7 +12,7 @@ const Sidebar = () => {
             activeClassName={styles.Active}
           >
             Tv
-          </NavLink>{" "}
+          </NavLink>
           <NavLink
             exact
             to="/"
@@ -20,7 +20,7 @@ const Sidebar = () => {
             activeClassName={styles.Active}
           >
             Mobile Phone
-          </NavLink>{" "}
+          </NavLink>
           <NavLink
             exact
             to="/"
@@ -28,7 +28,7 @@ const Sidebar = () => {
             activeClassName={styles.Active}
           >
             Tablet
-          </NavLink>{" "}
+          </NavLink>
           <NavLink
             exact
             to="/"
@@ -36,7 +36,7 @@ const Sidebar = () => {
             activeClassName={styles.Active}
           >
             Tv Accessories
-          </NavLink>{" "}
+          </NavLink>
           <NavLink
             exact
             to="/"
@@ -57,4 +57,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export default CategoryBar;
