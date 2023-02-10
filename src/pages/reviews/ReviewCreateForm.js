@@ -58,8 +58,8 @@ function ReviewCreateForm() {
     const formData = new FormData();
 
     formData.append("title", title);
-    formData.append("rating", rating.choice);
-    formData.append("category", category.choice);
+    formData.append("rating", rating);
+    formData.append("category", category);
     formData.append("content", content);
     formData.append("image", imageInput.current.files[0]);
 
@@ -90,23 +90,25 @@ function ReviewCreateForm() {
           {message}
         </Alert>
       ))}
-        <Form.Group>
+      <Form.Group>
         <Form.Label>Rating</Form.Label>
         <Form.Control
-          as="choice"
+          type="text"
+          value={rating}
           rows={6}
           name="rating"
-          value={rating.choice}
           onChange={handleChange}
         />
+        
       </Form.Group>
       <Form.Group>
         <Form.Label>Category</Form.Label>
         <Form.Control
-          as="option"
+          as="select"
+          option="tv"
           rows={6}
-          name="rating"
-          value={category.choice}
+          name="category"
+          value={category}
           onChange={handleChange}
         />
       </Form.Group>
