@@ -75,7 +75,7 @@ function ReviewCreateForm() {
   };
 
   const textFields = (
-    <div className="text-center">
+    <div>
       <Form.Group>
         <Form.Label>Title</Form.Label>
         <Form.Control
@@ -91,28 +91,48 @@ function ReviewCreateForm() {
         </Alert>
       ))}
       <Form.Group>
-        <Form.Label>Rating</Form.Label>
-        <Form.Control
-          type="text"
-          value={rating}
-          rows={6}
-          name="rating"
-          onChange={handleChange}
-        />
-        
-      </Form.Group>
-      <Form.Group>
         <Form.Label>Category</Form.Label>
         <Form.Control
           as="select"
-          option="tv"
-          rows={6}
           name="category"
           value={category}
           onChange={handleChange}
-        />
+        >
+          <option></option>
+          <option>Tv</option>
+          <option>Mobile Phone</option>
+          <option>Tablet</option>
+          <option>Tv Accessories</option>
+          <option>Mobile Phone Accessories</option>
+          <option>Tablet Accessories</option>
+        </Form.Control>
       </Form.Group>
-
+      {errors?.category?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+      <Form.Group>
+        <Form.Label>Rating</Form.Label>
+        <Form.Control
+          as="select"
+          name="rating"
+          value={rating}
+          onChange={handleChange}
+        >
+          <option></option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </Form.Control>
+      </Form.Group>
+      {errors?.rating?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
       <Form.Group>
         <Form.Label>Review</Form.Label>
         <Form.Control
@@ -128,7 +148,6 @@ function ReviewCreateForm() {
           {message}
         </Alert>
       ))}
-
       <Button
         className={`${btnStyles.Button} ${btnStyles.Blue}`}
         onClick={() => history.goBack()}

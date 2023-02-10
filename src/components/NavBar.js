@@ -27,13 +27,13 @@ const NavBar = () => {
     }
   };
 
-  const addPostIcon = (
+  const addReviewIcon = (
     <NavLink
       className={styles.NavLink}
       activeClassName={styles.Active}
-      to="/posts/create"
+      to="/reviews/create"
     >
-      <i className="far fa-plus-square"></i>Add post
+      <i className="far fa-plus-square"></i>New Review
     </NavLink>
   );
   const loggedInIcons = (
@@ -88,7 +88,7 @@ const NavBar = () => {
             <h1>E-Review</h1>
           </Navbar.Brand>
         </NavLink>
-        {currentUser && addPostIcon}
+        {currentUser && addReviewIcon}
         <Navbar.Toggle
           ref={ref}
           onClick={() => setExpanded(!expanded)}

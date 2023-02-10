@@ -7,6 +7,7 @@ import SignInForm from "./pages/auth/SignInForm";
 import SignUpForm from "./pages/auth/SignUpForm";
 import CategoryBar from "./components/CategoryBar";
 import ReviewCreateForm from "./pages/reviews/ReviewCreateForm";
+import ReviewPage from "./pages/reviews/ReviewPage";
 
 
 function App() {
@@ -38,7 +39,7 @@ function App() {
           <Route exact path="/signin" render={() => <SignInForm />} />
           <Route exact path="/signup" render={() => <SignUpForm />} />
           <Route exact path="/reviews/create" render={() => <ReviewCreateForm />} />
-          {/* <Route exact path="/posts/:id" render={() => <PostPage />} /> */}
+          <Route exact path="/reviews/:id" render={() => <ReviewPage />} />
           {/* <Route exact path="/posts/:id/edit" render={() => <PostEditForm />} /> */}
           {/* <Route exact path="/profiles/:id" render={() => <ProfilePage />} /> */}
           {/* <Route
