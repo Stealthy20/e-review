@@ -5,11 +5,14 @@ import { Route, Switch } from "react-router-dom";
 import "./api/axiosDefaults";
 import SignInForm from "./pages/auth/SignInForm";
 import SignUpForm from "./pages/auth/SignUpForm";
+import CategoryBar from "./components/CategoryBar";
+
 
 function App() {
   return (
     <div className={styles.App}>
       <NavBar />
+      <CategoryBar />
       <Container className={styles.Main}>
         <Switch>
           <Route

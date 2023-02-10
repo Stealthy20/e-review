@@ -4,10 +4,10 @@
     height: 75x;
   }
   
-  .NavLink {
-    padding: 5px;
-  }
-  
-  .Active i {
-    color: #2142b2;
-  }
+.NavLink {
+  padding: 5px;
+}
+
+.Active i {
+  color: #2142b2;
+}
