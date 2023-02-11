@@ -45,9 +45,6 @@ function CommentCreateForm(props) {
     <Form className="mt-2" onSubmit={handleSubmit}>
       <Form.Group>
         <InputGroup>
-          <Link to={`/profiles/${profile_id}`}>
-            <Avatar src={profileImage} />
-          </Link>
           <Form.Control
             className={styles.Form}
             placeholder="my comment..."
@@ -63,7 +60,7 @@ function CommentCreateForm(props) {
         disabled={!content.trim()}
         type="submit"
       >
-        comment
+        Comment
       </button>
     </Form>
   );

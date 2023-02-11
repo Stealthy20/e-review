@@ -21,7 +21,7 @@ const Review = (props) => {
     image,
     updated_at,
     reviewPage,
-    setReviews
+    setReviews,
   } = props;
 
   const currentUser = useCurrentUser();
@@ -47,7 +47,7 @@ const Review = (props) => {
       setReviews((prevReviews) => ({
         ...prevReviews,
         results: prevReviews.results.map((review) => {
-          return review.id === id
+          return review.id === id;
         }),
       }));
     } catch (err) {
@@ -61,7 +61,7 @@ const Review = (props) => {
       setReviews((prevReviews) => ({
         ...prevReviews,
         results: prevReviews.results.map((review) => {
-          return review.id === id
+          return review.id === id;
         }),
       }));
     } catch (err) {
@@ -73,7 +73,7 @@ const Review = (props) => {
     <Card className={styles.Review}>
       <Card.Body>
         <Media className="align-items-center justify-content-between">
-          <Link to={`/profiles/${profile_id}`}>
+          <Link to={`/review/${id}`}>
             <Avatar src={profile_image} height={55} />
             {owner}
           </Link>
@@ -123,6 +123,5 @@ const Review = (props) => {
     </Card>
   );
 };
-
 
 export default Review;
