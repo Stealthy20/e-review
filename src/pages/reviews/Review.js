@@ -2,9 +2,10 @@ import React from "react";
 import styles from "../../styles/Review.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { Card, Media, OverlayTrigger, Tooltip } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
+import { MoreDropdown } from "../../components/MoreDropdown";
 
 const Review = (props) => {
   const {
@@ -25,6 +26,20 @@ const Review = (props) => {
 
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
+  const history = useHistory();
+
+  const handleEdit = () => {
+    history.push(`/reviews/${id}/edit`);
+  };
+
+  const handleDelete = async () => {
+    try {
+      await axiosRes.delete(`/reviews/${id}/`);
+      history.goBack();
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   const handleLike = async () => {
     try {
@@ -64,7 +79,12 @@ const Review = (props) => {
           </Link>
           <div className="d-flex align-items-center">
             <span>{updated_at}</span>
-            {is_owner && reviewPage && "..."}
+            {is_owner && reviewPage && (
+              <MoreDropdown
+                handleEdit={handleEdit}
+                handleDelete={handleDelete}
+              />
+            )}
           </div>
         </Media>
       </Card.Body>

@@ -9,7 +9,9 @@ import CategoryBar from "./components/CategoryBar";
 import ReviewCreateForm from "./pages/reviews/ReviewCreateForm";
 import ReviewPage from "./pages/reviews/ReviewPage";
 import ReviewsPage from "./pages/reviews/ReviewsPage";
+import ReviewEditForm from "./pages/reviews/ReviewEditForm";
 import { useCurrentUser } from "./contexts/CurrentUserContext";
+import { Fragment } from "react";
 
 function App() {
   const currentUser = useCurrentUser();
@@ -18,21 +20,17 @@ function App() {
   return (
     <div className={styles.App}>
       <NavBar />
-      
+
       <Container className={styles.Main}>
         <Switch>
-        <Route
+          <Route
             exact
             path="/"
             render={() => (
-              <CategoryBar />
-            )}
-          />
-        <Route
-            exact
-            path="/"
-            render={() => (
-              <ReviewsPage message="No results found. Adjust the search keyword." />
+              <Fragment>
+                <CategoryBar />
+                <ReviewsPage message="No results found. Adjust the search keyword." />
+              </Fragment>
             )}
           />
           <Route
@@ -47,9 +45,13 @@ function App() {
           />
           <Route exact path="/signin" render={() => <SignInForm />} />
           <Route exact path="/signup" render={() => <SignUpForm />} />
-          <Route exact path="/reviews/create" render={() => <ReviewCreateForm />} />
-          <Route exact path="/reviews/:id" render={() => <ReviewPage />} />
-          {/* <Route exact path="/posts/:id/edit" render={() => <PostEditForm />} /> */}
+          <Route
+            exact
+            path="/reviews/create"
+            render={() => <ReviewCreateForm />}
+          />
+          <Route exact path="/review/:id" render={() => <ReviewPage />} />
+          <Route exact path="/reviews/:id/edit" render={() => <ReviewEditForm />} />
           {/* <Route exact path="/profiles/:id" render={() => <ProfilePage />} /> */}
           {/* <Route
             exact
