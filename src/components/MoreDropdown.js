@@ -17,7 +17,7 @@ const ThreeDots = React.forwardRef(({ onClick }, ref) => (
   />
 ));
 
-export function ProfileEditDropdown({ id }) {
+export const ProfileEditDropdown = ({ id }) => {
   const history = useHistory();
   return (
     <Dropdown className={`ml-auto px-3 ${styles.Absolute}`} drop="left">
@@ -46,7 +46,7 @@ export function ProfileEditDropdown({ id }) {
       </Dropdown.Menu>
     </Dropdown>
   );
-}
+};
 
 export const MoreDropdown = ({ handleEdit, handleDelete }) => {
   return (

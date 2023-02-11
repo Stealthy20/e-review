@@ -10,6 +10,10 @@ import ReviewCreateForm from "./pages/reviews/ReviewCreateForm";
 import ReviewPage from "./pages/reviews/ReviewPage";
 import ReviewsPage from "./pages/reviews/ReviewsPage";
 import ReviewEditForm from "./pages/reviews/ReviewEditForm";
+import ProfilePage from "./pages/Profiles/ProfilePage";
+import UsernameForm from "./pages/Profiles/UsernameForm";
+import UserPasswordForm from "./pages/Profiles/UserPasswordFrom";
+import ProfileEditForm from "./pages/Profiles/ProfileEditForm";
 import { useCurrentUser } from "./contexts/CurrentUserContext";
 import { Fragment } from "react";
 
@@ -52,8 +56,8 @@ function App() {
           />
           <Route exact path="/review/:id" render={() => <ReviewPage />} />
           <Route exact path="/reviews/:id/edit" render={() => <ReviewEditForm />} />
-          {/* <Route exact path="/profiles/:id" render={() => <ProfilePage />} /> */}
-          {/* <Route
+          <Route exact path="/profiles/:id" render={() => <ProfilePage />} />
+          <Route
             exact
             path="/profiles/:id/edit/username"
             render={() => <UsernameForm />}
@@ -67,7 +71,7 @@ function App() {
             exact
             path="/profiles/:id/edit"
             render={() => <ProfileEditForm />}
-          /> */}
+          />
 
           <Route render={() => <p>Page not found!</p>} />
         </Switch>

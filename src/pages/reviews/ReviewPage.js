@@ -9,6 +9,9 @@ import { useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import Review from "./Review";
 import Comment from "../comments/Comment";
+import InfiniteScroll from "react-infinite-scroll-component";
+import Asset from "../../components/Asset";
+import { fetchMoreData } from "../../utils/utils";
 
 import CommentCreateForm from "../comments/CommentCreateForm";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
@@ -55,14 +58,20 @@ function ReviewPage() {
             "Comments"
           ) : null}
           {comments.results.length ? (
-            comments.results.map((comment) => (
+            <InfiniteScroll
+            children={comments.results.map((comment) => (
               <Comment
-              key={comment.id}
-              {...comment}
-              setReview={setReview}
-              setComments={setComments}
-            />
-            ))
+                key={comment.id}
+                {...comment}
+                setReview={setReview}
+                setComments={setComments}
+              />
+            ))}
+            dataLength={comments.results.length}
+            loader={<Asset spinner />}
+            hasMore={!!comments.next}
+            next={() => fetchMoreData(comments, setComments)}
+          />
           ) : currentUser ? (
             <span>No comments yet, be the first to comment!</span>
           ) : (
