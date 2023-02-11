@@ -18,9 +18,16 @@ function App() {
   return (
     <div className={styles.App}>
       <NavBar />
-      <CategoryBar />
+      
       <Container className={styles.Main}>
         <Switch>
+        <Route
+            exact
+            path="/"
+            render={() => (
+              <CategoryBar />
+            )}
+          />
         <Route
             exact
             path="/"

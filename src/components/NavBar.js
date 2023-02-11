@@ -41,7 +41,7 @@ const NavBar = () => {
       <NavLink
         className={styles.NavLink}
         activeClassName={styles.Active}
-        to="/saved"
+        to="/keep"
       >
         <i className="fas fa-heart"></i>Saved
       </NavLink>
