@@ -39,11 +39,11 @@ function App() {
           />
           <Route
             exact
-            path="/keep"
+            path="/keep/"
             render={() => (
               <ReviewsPage
                 message="No results found. Adjust the search keyword or save a review."
-                filter={`keep__owner__profile=${profile_id}&ordering=-keep__created_at&`}
+                filter={`keep__owner__username=${currentUser?.username}&ordering=-keep__created_at&`}
               />
             )}
           />

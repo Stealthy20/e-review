@@ -17,7 +17,7 @@ import NoResults from "../../assets/no-results.png";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 
-function ReviewsPage({ message, filter = "" }) {
+function ReviewsPage({ message, filter = "", profile_id }) {
   const [reviews, setReviews] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
@@ -27,6 +27,7 @@ function ReviewsPage({ message, filter = "" }) {
   useEffect(() => {
     const fetchReviews = async () => {
       try {
+        console.log(filter);
         const { data } = await axiosReq.get(`/reviews/?${filter}search=${query}`);
         setReviews(data);
         setHasLoaded(true);

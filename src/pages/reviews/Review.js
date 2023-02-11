@@ -13,10 +13,10 @@ const Review = (props) => {
     owner,
     profile_id,
     profile_image,
+    comments_count,
+    keeps_count,
     keep_id,
     title,
-    rating,
-    category,
     content,
     image,
     updated_at,
@@ -41,13 +41,15 @@ const Review = (props) => {
     }
   };
 
-  const handleLike = async () => {
+  const handleKeep = async () => {
     try {
       const { data } = await axiosRes.post("/keep/", { review: id });
       setReviews((prevReviews) => ({
         ...prevReviews,
         results: prevReviews.results.map((review) => {
-          return review.id === id;
+          return review.id === id
+            ? { ...review, keeps_count: review.keeps_count + 1, keep_id: data.id }
+            : review;
         }),
       }));
     } catch (err) {
@@ -55,13 +57,15 @@ const Review = (props) => {
     }
   };
 
-  const handleUnlike = async () => {
+  const handleUnkeep = async () => {
     try {
       await axiosRes.delete(`/keep/${keep_id}/`);
       setReviews((prevReviews) => ({
         ...prevReviews,
         results: prevReviews.results.map((review) => {
-          return review.id === id;
+          return review.id === id
+            ? { ...review, keeps_count: review.keeps_count - 1, keep_id: null }
+            : review;
         }),
       }));
     } catch (err) {
@@ -88,7 +92,7 @@ const Review = (props) => {
           </div>
         </Media>
       </Card.Body>
-      <Link to={`/review/${id}`}>
+      <Link to={`/reviews/${id}`}>
         <Card.Img src={image} alt={title} />
       </Link>
       <Card.Body>
@@ -103,21 +107,26 @@ const Review = (props) => {
               <i className="far fa-heart" />
             </OverlayTrigger>
           ) : keep_id ? (
-            <span onClick={handleUnlike}>
+            <span onClick={handleUnkeep}>
               <i className={`fas fa-heart ${styles.Heart}`} />
             </span>
           ) : currentUser ? (
-            <span onClick={handleLike}>
+            <span onClick={handleKeep}>
               <i className={`far fa-heart ${styles.HeartOutline}`} />
             </span>
           ) : (
             <OverlayTrigger
               placement="top"
-              overlay={<Tooltip>Log in to save the review!</Tooltip>}
+              overlay={<Tooltip>Log in to save Reviews!</Tooltip>}
             >
               <i className="far fa-heart" />
             </OverlayTrigger>
           )}
+          {keeps_count}
+          <Link to={`/reviews/${id}`}>
+            <i className="far fa-comments" />
+          </Link>
+          {comments_count}
         </div>
       </Card.Body>
     </Card>
