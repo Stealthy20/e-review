@@ -29,7 +29,7 @@ function ReviewPage() {
       try {
         const [{ data: review }, { data: comments }] = await Promise.all([
           axiosReq.get(`/reviews/${id}`),
-          axiosReq.get(`/comments/?post=${id}`),
+          axiosReq.get(`/comments/?review=${id}`),
         ]);
         setReview({ results: [review] });
         setComments(comments);
