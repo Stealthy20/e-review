@@ -17,6 +17,8 @@ const Review = (props) => {
     keeps_count,
     keep_id,
     title,
+    category,
+    rating,
     content,
     image,
     updated_at,
@@ -97,6 +99,8 @@ const Review = (props) => {
       </Link>
       <Card.Body>
         {title && <Card.Title className="text-center">{title}</Card.Title>}
+        {category && <Card.Title className="text-center">{category}</Card.Title>}
+        {rating && <Card.Title className="text-center">{rating} <i className="fas fa-star "/></Card.Title>}
         {content && <Card.Text>{content}</Card.Text>}
         <div className={styles.ReviewBar}>
           {is_owner ? (
