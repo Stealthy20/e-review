@@ -149,12 +149,12 @@ function ReviewCreateForm() {
         </Alert>
       ))}
       <Button
-        className=""
+        className={``}
         onClick={() => history.goBack()}
       >
         cancel
       </Button>
-      <Button className="" type="submit">
+      <Button className={``} type="submit">
         create
       </Button>
     </div>
@@ -163,37 +163,28 @@ function ReviewCreateForm() {
   return (
     <Form onSubmit={handleSubmit}>
       <Row>
-        <Col className="" md={7} lg={8}>
-          <Container
-            className={`} `}
-          >
+        <Col className="" md={""} lg={""}>
+          <Container className={``}>
             <Form.Group className="">
               {image ? (
                 <>
                   <figure>
-                    <Image className={appStyles.Image} src={image} rounded />
+                    <Image className={""} src={image} rounded />
                   </figure>
                   <div>
-                    <Form.Label
-                      className={``}
-                      htmlFor="image-upload"
-                    >
+                    <Form.Label className={``} htmlFor="image-upload">
                       Change the image
                     </Form.Label>
                   </div>
                 </>
               ) : (
-                <Form.Label
-                  className=""
-                  htmlFor="image-upload"
-                >
+                <Form.Label className="" htmlFor="image-upload">
                   <Asset
                     src={Upload}
                     message="Click or tap to upload an image"
                   />
                 </Form.Label>
               )}
-
               <Form.File
                 id="image-upload"
                 accept="image/*"
@@ -206,12 +197,8 @@ function ReviewCreateForm() {
                 {message}
               </Alert>
             ))}
-
             <div className="">{textFields}</div>
           </Container>
-        </Col>
-        <Col md={5} lg={4} className="">
-          <Container className={""}>{textFields}</Container>
         </Col>
       </Row>
     </Form>
