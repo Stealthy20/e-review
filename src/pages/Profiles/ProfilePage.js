@@ -76,34 +76,7 @@ function ProfilePage() {
               <div>{profile?.reviews_count}</div>
               <div>Reviews</div>
             </Col>
-            <Col xs={3} className="my-2">
-              <div>{profile?.followers_count}</div>
-              <div>followers</div>
-            </Col>
-            <Col xs={3} className="my-2">
-              <div>{profile?.following_count}</div>
-              <div>following</div>
-            </Col>
           </Row>
-        </Col>
-        <Col lg={3} className="text-lg-right">
-          {currentUser &&
-            !is_owner &&
-            (profile?.following_id ? (
-              <Button
-                className={`${btnStyles.Button} ${btnStyles.BlackOutline}`}
-                onClick={() => {}}
-              >
-                unfollow
-              </Button>
-            ) : (
-              <Button
-                className={`${btnStyles.Button} ${btnStyles.Black}`}
-                onClick={() => {}}
-              >
-                follow
-              </Button>
-            ))}
         </Col>
         {profile?.content && <Col className="p-3">{profile.content}</Col>}
       </Row>
@@ -141,7 +114,7 @@ function ProfilePage() {
   return (
     <Row>
       <Col className="py-2 p-0 p-lg-2" lg={8}>
-        <PopularProfiles mobile />
+      
         <Container className={appStyles.Content}>
           {hasLoaded ? (
             <>
@@ -154,7 +127,7 @@ function ProfilePage() {
         </Container>
       </Col>
       <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
-        <PopularProfiles />
+       
       </Col>
     </Row>
   );
