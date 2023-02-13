@@ -22,7 +22,7 @@ function App() {
   const profile_id = currentUser?.profile_id || "";
 
   return (
-    <div className={styles.App}>
+    <div className={""}>
       <NavBar />
 
       <Container className={styles.Main}>
@@ -54,7 +54,7 @@ function App() {
             path="/reviews/create"
             render={() => <ReviewCreateForm />}
           />
-          <Route exact path="/review/:id" render={() => <ReviewPage />} />
+          <Route exact path="/reviews/:id" render={() => <ReviewPage />} />
           <Route exact path="/reviews/:id/edit" render={() => <ReviewEditForm />} />
           <Route exact path="/profiles/:id" render={() => <ProfilePage />} />
           <Route

@@ -149,12 +149,12 @@ function ReviewCreateForm() {
         </Alert>
       ))}
       <Button
-        className={`${btnStyles.Button} ${btnStyles.Blue}`}
+        className=""
         onClick={() => history.goBack()}
       >
         cancel
       </Button>
-      <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
+      <Button className="" type="submit">
         create
       </Button>
     </div>
@@ -163,11 +163,11 @@ function ReviewCreateForm() {
   return (
     <Form onSubmit={handleSubmit}>
       <Row>
-        <Col className="py-2 p-0 p-md-2" md={7} lg={8}>
+        <Col className="" md={7} lg={8}>
           <Container
-            className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
+            className={`} `}
           >
-            <Form.Group className="text-center">
+            <Form.Group className="">
               {image ? (
                 <>
                   <figure>
@@ -175,7 +175,7 @@ function ReviewCreateForm() {
                   </figure>
                   <div>
                     <Form.Label
-                      className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
+                      className={``}
                       htmlFor="image-upload"
                     >
                       Change the image
@@ -184,7 +184,7 @@ function ReviewCreateForm() {
                 </>
               ) : (
                 <Form.Label
-                  className="d-flex justify-content-center"
+                  className=""
                   htmlFor="image-upload"
                 >
                   <Asset
@@ -207,11 +207,11 @@ function ReviewCreateForm() {
               </Alert>
             ))}
 
-            <div className="d-md-none">{textFields}</div>
+            <div className="">{textFields}</div>
           </Container>
         </Col>
-        <Col md={5} lg={4} className="d-none d-md-block p-0 p-md-2">
-          <Container className={appStyles.Content}>{textFields}</Container>
+        <Col md={5} lg={4} className="">
+          <Container className={""}>{textFields}</Container>
         </Col>
       </Row>
     </Form>

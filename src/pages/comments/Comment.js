@@ -31,7 +31,6 @@ const Comment = (props) => {
         results: [
           {
             ...prevReview.results[0],
-            comments_count: prevReview.results[0].comments_count - 1,
           },
         ],
       }));

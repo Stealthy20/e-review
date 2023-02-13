@@ -47,9 +47,9 @@ function ReviewsPage({ message, filter = "", profile_id }) {
   }, [filter, query, pathname]);
 
   return (
-    <Row className="h-100">
-      <Col className="py-2 p-0 p-lg-2" lg={8}>
-        <i className={`fas fa-search ${styles.SearchIcon}`} />
+    <Row className="">
+      <Col className="" lg={8}>
+        <i className={`fas fa-search ${""}`} />
         <Form
           className={styles.SearchBar}
           onSubmit={(event) => event.preventDefault()}
@@ -76,13 +76,13 @@ function ReviewsPage({ message, filter = "", profile_id }) {
                 next={() => fetchMoreData(reviews, setReviews)}
               />
             ) : (
-              <Container className={appStyles.Content}>
+              <Container className={""}>
                 <Asset src={NoResults} message={message} />
               </Container>
             )}
           </>
         ) : (
-          <Container className={appStyles.Content}>
+          <Container className={""}>
             <Asset spinner />
           </Container>
         )}

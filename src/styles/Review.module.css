@@ -11,15 +11,15 @@
     margin: 0 0;
   }
   
-  .Heart {
-    color: #f85032;
+  .Keep {
+    color: black;
   }
   
-  .Heart:hover {
-    color: #2142b2;
+  .Keep:hover {
+    color: gray;
   }
   
-  .HeartOutline:hover {
-    color: #f85032;
+  .KeepOutline:hover {
+    color: grey;
   }
   

@@ -1,15 +1,15 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+
 
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 
 import styles from "../../styles/CommentCreateEditForm.module.css";
-import Avatar from "../../components/Avatar";
+
 import { axiosRes } from "../../api/axiosDefaults";
 
 function CommentCreateForm(props) {
-  const { review, setReview, setComments, profileImage, profile_id } = props;
+  const { review, setReview, setComments,} = props;
   const [content, setContent] = useState("");
 
   const handleChange = (event) => {
@@ -31,7 +31,6 @@ function CommentCreateForm(props) {
         results: [
           {
             ...prevReview.results[0],
-            comments_count: prevReview.results[0].comments_count + 1,
           },
         ],
       }));

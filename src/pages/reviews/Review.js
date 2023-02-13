@@ -13,8 +13,6 @@ const Review = (props) => {
     owner,
     profile_id,
     profile_image,
-    comments_count,
-    keeps_count,
     keep_id,
     title,
     category,
@@ -78,12 +76,12 @@ const Review = (props) => {
   return (
     <Card className={styles.Review}>
       <Card.Body>
-        <Media className="align-items-center justify-content-between">
+        <Media className="">
           <Link to={`/profiles/${profile_id}`}>
             <Avatar src={profile_image} height={55} />
             {owner}
           </Link>
-          <div className="d-flex align-items-center">
+          <div className="">
             <span>{updated_at}</span>
             {is_owner && reviewPage && (
               <MoreDropdown
@@ -98,9 +96,9 @@ const Review = (props) => {
         <Card.Img src={image} alt={title} />
       </Link>
       <Card.Body>
-        {title && <Card.Title className="text-center">{title}</Card.Title>}
-        {category && <Card.Title className="text-center">{category}</Card.Title>}
-        {rating && <Card.Title className="text-center">{rating} <i className="fas fa-star "/></Card.Title>}
+        {title && <Card.Title className="">{title}</Card.Title>}
+        {category && <Card.Title className="">{category}</Card.Title>}
+        {rating && <Card.Title className="">{rating} <i className="fas fa-star "/></Card.Title>}
         {content && <Card.Text>{content}</Card.Text>}
         <div className={styles.ReviewBar}>
           {is_owner ? (
@@ -112,11 +110,11 @@ const Review = (props) => {
             </OverlayTrigger>
           ) : keep_id ? (
             <span onClick={handleUnkeep}>
-              <i className={`fas fa-floppy-disk ${styles.Heart}`} />
+              <i className={`fas fa-floppy-disk ${styles.Keep}`} />
             </span>
           ) : currentUser ? (
             <span onClick={handleKeep}>
-              <i className={`fas fa-floppy-disk ${styles.HeartOutline}`} />
+              <i className={`fas fa-floppy-disk ${styles.KeepOutline}`} />
             </span>
           ) : (
             <OverlayTrigger

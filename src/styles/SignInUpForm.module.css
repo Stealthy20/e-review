@@ -7,24 +7,22 @@
     box-sizing: border-box;
     border-radius: 2px;
     color: red;
-    text-align: center;
+    text-align: left;
     padding: 10px;
   }
   
   .Header {
-    font-style: normal;
-    font-weight: bold;
-    font-size: 16px;
+ 
     line-height: 19px;
     text-align: center;
-    letter-spacing: 0.2em;
+    
     text-transform: uppercase;
     color: red;
   }
   
   .Link {
     text-decoration: none;
-    text-align: center;
+    text-align: left;
     display: block;
     margin: auto;
   }
@@ -34,13 +32,13 @@
   }
   
   .Container {
-    padding: 30px 10px;
+    
   }
   
   .SignInCol {
-    height: 320px;
+   
   }
   
   .SignUpCol {
-    height: 375px;
+   
   }
