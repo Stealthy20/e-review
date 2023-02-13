@@ -44,7 +44,7 @@ const NavBar = () => {
         activeClassName={styles.Active}
         to="/keep"
       >
-        <i className="fas fa-heart"></i>Saved
+        <i className="fas fa-floppy-disk"></i>Saved
       </NavLink>
       <NavLink className={styles.NavLink} to="/" onClick={handleSignOut}>
         <i className="fas fa-sign-out-alt"></i>Sign out
@@ -54,7 +54,7 @@ const NavBar = () => {
         to={`/profiles/${currentUser?.profile_id}`}
       >
         <div>
-        <ProfileEditDropdown  />
+          <ProfileEditDropdown />
           <Avatar src={currentUser?.profile_image} text="Profile" height={40} />
         </div>
       </NavLink>

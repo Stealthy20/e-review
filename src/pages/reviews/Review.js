@@ -108,29 +108,24 @@ const Review = (props) => {
               placement="top"
               overlay={<Tooltip>You can't save your own review!</Tooltip>}
             >
-              <i className="far fa-heart" />
+              <i className="fas fa-floppy-disk" />
             </OverlayTrigger>
           ) : keep_id ? (
             <span onClick={handleUnkeep}>
-              <i className={`fas fa-heart ${styles.Heart}`} />
+              <i className={`fas fa-floppy-disk ${styles.Heart}`} />
             </span>
           ) : currentUser ? (
             <span onClick={handleKeep}>
-              <i className={`far fa-heart ${styles.HeartOutline}`} />
+              <i className={`fas fa-floppy-disk ${styles.HeartOutline}`} />
             </span>
           ) : (
             <OverlayTrigger
               placement="top"
               overlay={<Tooltip>Log in to save Reviews!</Tooltip>}
             >
-              <i className="far fa-heart" />
+              <i className="fas fa-floppy-disk" />
             </OverlayTrigger>
           )}
-          {keeps_count}
-          <Link to={`/reviews/${id}`}>
-            <i className="far fa-comments" />
-          </Link>
-          {comments_count}
         </div>
       </Card.Body>
     </Card>
