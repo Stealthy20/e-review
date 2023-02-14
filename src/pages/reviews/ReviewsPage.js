@@ -17,10 +17,11 @@ import NoResults from "../../assets/no-results.png";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 
-function ReviewsPage({ message, filter = "", profile_id }) {
+function ReviewsPage({ message, filter = "", profile_id, setFilter}) {
   const [reviews, setReviews] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
+
 
   const [query, setQuery] = useState("");
 
@@ -28,7 +29,9 @@ function ReviewsPage({ message, filter = "", profile_id }) {
     const fetchReviews = async () => {
       try {
         console.log(filter);
-        const { data } = await axiosReq.get(`/reviews/?${filter}search=${query}`);
+        const { data } = await axiosReq.get(
+          `/reviews/?${filter}search=${query}`
+        );
         setReviews(data);
         setHasLoaded(true);
       } catch (err) {
@@ -43,7 +46,9 @@ function ReviewsPage({ message, filter = "", profile_id }) {
 
     return () => {
       clearTimeout(timer);
+      // setFilter("")
     };
+
   }, [filter, query, pathname]);
 
   return (
@@ -87,7 +92,6 @@ function ReviewsPage({ message, filter = "", profile_id }) {
           </Container>
         )}
       </Col>
-     
     </Row>
   );
 }

@@ -25,7 +25,6 @@ function App() {
   return (
     <div className={""}>
       <NavBar />
-
       <Container className={styles.Main}>
         <Switch>
           <Route
@@ -33,8 +32,9 @@ function App() {
             path="/"
             render={() => (
               <Fragment>
-                <CategoryBar setFilter={setFilter}/>
+                <CategoryBar setFilter={setFilter} />
                 <ReviewsPage
+                  setFilter={setFilter}
                   filter={filter}
                   message="No results found. Adjust the search keyword."
                 />

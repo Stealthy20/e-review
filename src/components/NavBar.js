@@ -17,7 +17,7 @@ const NavBar = () => {
   const setCurrentUser = useSetCurrentUser();
 
   const { expanded, setExpanded, ref } = useClickOutsideToggle();
-
+  
   const handleSignOut = async () => {
     try {
       await axios.post("dj-rest-auth/logout/");
@@ -87,7 +87,7 @@ const NavBar = () => {
       fixed="top"
     >
       <Container>
-        <NavLink to="/">
+        <NavLink to="/" onClick={() => window.location.reload()}>
           <Navbar.Brand>
             <h1>E-Review</h1>
           </Navbar.Brand>
@@ -102,6 +102,7 @@ const NavBar = () => {
           <Nav className="m-auto text-left">
             <NavLink
               exact
+              onClick={() => window.location.reload()}
               className={styles.NavLink}
               activeClassName={styles.Active}
               to="/"
