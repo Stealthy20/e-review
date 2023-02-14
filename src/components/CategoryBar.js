@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "../styles/CategoryBar.module.css";
-import { NavLink } from "react-router-dom";
 
 const CategoryBar = (props) => {
   const { setFilter } = props;
@@ -12,48 +11,48 @@ const CategoryBar = (props) => {
 
   return (
     <div className={styles.CategoryBar}>
-        <a
+        <span
         className={styles.NavLink}
         onClick={() => window.location.reload()}
       >
         All
-      </a>
-      <a
+      </span>
+      <span
         className={styles.NavLink}
         onClick={(e) => handleClick(e)}
       >
         Tv
-      </a>
-      <a
+      </span>
+      <span
         className={styles.NavLink}
         onClick={(e) => handleClick(e)}
       >
         Mobile Phone
-      </a>
-      <a
+      </span>
+      <span
         className={styles.NavLink}
         onClick={(e) => handleClick(e)}
       >
         Tablet
-      </a>
-      <a
+      </span>
+      <span
         className={styles.NavLink}
         onClick={(e) => handleClick(e)}
       >
         Tv Accessories
-      </a>
-      <a
+      </span>
+      <span
         className={styles.NavLink}
         onClick={(e) => handleClick(e)}
       >
         Mobile Phone Accessories
-      </a>
-      <a
+      </span>
+      <span
         className={styles.NavLink}
         onClick={(e) => handleClick(e)}
       >
         Tablet Accessories
-      </a>
+      </span>
     </div>
   );
 };

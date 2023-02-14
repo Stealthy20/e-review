@@ -17,7 +17,7 @@ const NavBar = () => {
   const setCurrentUser = useSetCurrentUser();
 
   const { expanded, setExpanded, ref } = useClickOutsideToggle();
-  
+
   const handleSignOut = async () => {
     try {
       await axios.post("dj-rest-auth/logout/");
@@ -34,7 +34,7 @@ const NavBar = () => {
       activeClassName={styles.Active}
       to="/reviews/create"
     >
-      <i className="far fa-plus-square"></i>New Review
+      <i className="far fa-plus-square"></i>New 
     </NavLink>
   );
   const loggedInIcons = (
@@ -55,7 +55,8 @@ const NavBar = () => {
       >
         <div>
           <ProfileEditDropdown />
-          <Avatar src={currentUser?.profile_image} text="Profile" height={40} />
+          <Avatar src={currentUser?.profile_image} text="My Profile" height={40} />
+  
         </div>
       </NavLink>
     </>
