@@ -15,11 +15,12 @@ import UsernameForm from "./pages/Profiles/UsernameForm";
 import UserPasswordForm from "./pages/Profiles/UserPasswordFrom";
 import ProfileEditForm from "./pages/Profiles/ProfileEditForm";
 import { useCurrentUser } from "./contexts/CurrentUserContext";
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 
 function App() {
   const currentUser = useCurrentUser();
   const profile_id = currentUser?.profile_id || "";
+  const [filter, setFilter] = useState("");
 
   return (
     <div className={""}>
@@ -32,8 +33,11 @@ function App() {
             path="/"
             render={() => (
               <Fragment>
-                <CategoryBar />
-                <ReviewsPage message="No results found. Adjust the search keyword." />
+                <CategoryBar setFilter={setFilter}/>
+                <ReviewsPage
+                  filter={filter}
+                  message="No results found. Adjust the search keyword."
+                />
               </Fragment>
             )}
           />
@@ -55,7 +59,11 @@ function App() {
             render={() => <ReviewCreateForm />}
           />
           <Route exact path="/reviews/:id" render={() => <ReviewPage />} />
-          <Route exact path="/reviews/:id/edit" render={() => <ReviewEditForm />} />
+          <Route
+            exact
+            path="/reviews/:id/edit"
+            render={() => <ReviewEditForm />}
+          />
           <Route exact path="/profiles/:id" render={() => <ProfilePage />} />
           <Route
             exact
