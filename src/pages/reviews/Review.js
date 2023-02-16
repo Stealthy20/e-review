@@ -75,7 +75,7 @@ const Review = (props) => {
         ...prevReviews,
         results: prevReviews.results.map((review) => {
           return review.id === id
-            ? { ...review, keeps_count: review.keeps_count + 1, keep_id: data.id }
+            ? { ...review, keep_id: data.id }
             : review;
         }),
       }));
@@ -91,7 +91,7 @@ const Review = (props) => {
         ...prevReviews,
         results: prevReviews.results.map((review) => {
           return review.id === id
-            ? { ...review, keeps_count: review.keeps_count - 1, keep_id: null }
+            ? { ...review, keep_id: null }
             : review;
         }),
       }));
@@ -151,6 +151,7 @@ const Review = (props) => {
               <i className="fas fa-floppy-disk" />
             </OverlayTrigger>
           )}
+          
         </div>
       </Card.Body>
     </Card>
