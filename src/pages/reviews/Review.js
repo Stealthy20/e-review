@@ -32,14 +32,41 @@ const Review = (props) => {
     history.push(`/reviews/${id}/edit`);
   };
 
-  const handleDelete = async () => {
-    try {
-      await axiosRes.delete(`/reviews/${id}/`);
-      history.goBack();
-    } catch (err) {
-      console.log(err);
+  function useConfirm(message, onConfirm, onAbort) {
+    const confirm = () => {
+      if(window.confirm(message))
+        onConfirm();
+      else
+        onAbort();
     }
+    return confirm
+  }
+
+  const doDelete = () => handleDelete();
+  const handleAbort = () => handleCancel();
+  const confirmDelete = useConfirm(
+    'Sure?',
+    doDelete,
+    handleAbort,
+  );
+
+  const handleCancel = () =>{
+    useConfirm.close();
+  }
+
+  
+  const handleDelete = async () => {
+  
+      try {
+       
+        await axiosRes.delete(`/reviews/${id}/`);
+        history.goBack();
+        
+      } catch (err) {
+        console.log(err);
+      }
   };
+  
 
   const handleKeep = async () => {
     try {
@@ -86,7 +113,7 @@ const Review = (props) => {
             {is_owner && reviewPage && (
               <MoreDropdown
                 handleEdit={handleEdit}
-                handleDelete={handleDelete}
+                handleDelete={confirmDelete}
               />
             )}
           </div>

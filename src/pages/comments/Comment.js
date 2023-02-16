@@ -24,6 +24,28 @@ const Comment = (props) => {
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
 
+  function useConfirm(message, onConfirm, onAbort) {
+    const confirm = () => {
+      if(window.confirm(message))
+        onConfirm();
+      else
+        onAbort();
+    }
+    return confirm
+  }
+
+  const doDelete = () => handleDelete();
+  const handleAbort = () => handleCancel();
+  const confirmDelete = useConfirm(
+    'Sure?',
+    doDelete,
+    handleAbort,
+  );
+
+  const handleCancel = () =>{
+    useConfirm.close();
+  }
+
   const handleDelete = async () => {
     try {
       await axiosRes.delete(`/comments/${id}/`);
@@ -68,7 +90,7 @@ const Comment = (props) => {
         {is_owner && !showEditForm && (
           <MoreDropdown
             handleEdit={() => setShowEditForm(true)}
-            handleDelete={handleDelete}
+            handleDelete={confirmDelete}
           />
         )}
       </Media>

@@ -46,7 +46,6 @@ function ReviewsPage({ message, filter = "", profile_id, setFilter}) {
 
     return () => {
       clearTimeout(timer);
-      // setFilter("")
     };
 
   }, [filter, query, pathname]);
