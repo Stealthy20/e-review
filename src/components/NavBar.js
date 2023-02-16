@@ -55,7 +55,7 @@ const NavBar = () => {
       >
         <div>
           <ProfileEditDropdown />
-          <Avatar src={currentUser?.profile_image} text="My Profile" height={40} />
+          <Avatar src={currentUser?.profile_image} text={currentUser?.username} height={40} />
   
         </div>
       </NavLink>
