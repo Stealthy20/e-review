@@ -4,12 +4,14 @@
   padding: 10px 0;
   display: flex;
   justify-content: space-around;
-  background-color: #ffffff;
+  background-color: #fafafa;
   width: 100%;
+  color: rgb(18 16 25);
+  font-weight: bold;
 }
 
 .NavLink {
   padding: 5px;
-  
+  cursor: pointer;
 }
 

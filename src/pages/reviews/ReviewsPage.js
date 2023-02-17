@@ -53,7 +53,7 @@ function ReviewsPage({ message, filter = "", profile_id, setFilter}) {
   return (
     <Row className="">
       <Col className="" lg={8}>
-        <i className={`fas fa-search ${""}`} />
+      <i className={`fas fa-search ${styles.SearchIcon}`} />
         <Form
           className={styles.SearchBar}
           onSubmit={(event) => event.preventDefault()}

@@ -1,6 +1,6 @@
 .App {
   font-family: "DM Sans", sans-serif;
-  background-color: #f8f8f8;
+  background-color: #fafafa;
   min-height: 100vh;
 }
 
@@ -59,7 +59,7 @@ i {
 i:hover {
   cursor: pointer;
   transition: color ease-in-out 0.3s;
-  color: black;
+  color: rgb(18 16 25);
 }
 
 figure {
