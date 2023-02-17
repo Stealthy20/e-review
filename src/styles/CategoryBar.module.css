@@ -11,7 +11,13 @@
 }
 
 .NavLink {
-  padding: 5px;
+  
   cursor: pointer;
+  
 }
+
+/* On screens that are 365px or less, set the background color to blue
+@media screen and (max-width: 365px) {
+  margin-top: 100px;
+} */
 
