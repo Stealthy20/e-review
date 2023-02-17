@@ -165,10 +165,10 @@ function ReviewEditForm() {
         className={`${btnStyles.Button}`}
         onClick={() => history.goBack()}
       >
-        cancel
+        Cancel
       </Button>
       <Button className={`${btnStyles.Button}`} type="submit">
-        create
+        Create
       </Button>
     </div>
   );
@@ -178,7 +178,7 @@ function ReviewEditForm() {
       <Row>
         <Col className="py-2 p-0 p-md-2" md={7} lg={8}>
           <Container
-            className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
+            className={`${appStyles.Content} ${styles.Container}`}
           >
             <Form.Group className="text-center">
               <figure>
@@ -186,7 +186,7 @@ function ReviewEditForm() {
               </figure>
               <div>
                 <Form.Label
-                  className={``}
+                  className={btnStyles.Button}
                   htmlFor="image-upload"
                 >
                   Change the image
@@ -206,7 +206,7 @@ function ReviewEditForm() {
               </Alert>
             ))}
 
-            <div className="">{textFields}</div>
+            <div>{textFields}</div>
           </Container>
         </Col>
       </Row>

@@ -15,35 +15,15 @@ const Profile = (props) => {
 
   return (
     <div
-      className={`my-3 d-flex align-items-center ${mobile && "flex-column"}`}
+      className="my-3 d-flex align-items-center "
     >
       <div>
-        <Link className="align-self-center" to={`/profiles/${id}`}>
+        <Link className="align-self-center " to={`/profiles/${id}`}>
           <Avatar src={image} height={imageSize} />
         </Link>
       </div>
-      <div className={`mx-2 ${styles.WordBreak}`}>
+      <div className={`text-capitalize font-weight-bold mx-2 ${styles.WordBreak}`}>
         <strong>{owner}</strong>
-      </div>
-      <div className={`text-right ${!mobile && "ml-auto"}`}>
-        {!mobile &&
-          currentUser &&
-          !is_owner &&
-          (following_id ? (
-            <Button
-              className={`${btnStyles.Button}`}
-              onClick={() => {}}
-            >
-              unfollow
-            </Button>
-          ) : (
-            <Button
-              className={`${btnStyles.Button}`}
-              onClick={() => {}}
-            >
-              follow
-            </Button>
-          ))}
       </div>
     </div>
   );

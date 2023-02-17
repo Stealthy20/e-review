@@ -59,7 +59,7 @@ function ProfilePage() {
   const mainProfile = (
     <>
       {profile?.is_owner && <ProfileEditDropdown id={profile?.id} />}
-      <Row noGutters className="px-3 text-center">
+      <Row noGutters className="px-3 text-center text-capitalize font-weight-bold">
         <Col lg={3} className="text-lg-left">
           <Image
             className={styles.ProfileImage}
@@ -84,7 +84,7 @@ function ProfilePage() {
   const mainProfileReviews = (
     <>
       <hr />
-      <p className="text-center">{profile?.owner}'s reviews</p>
+      <p className="text-center text-capitalize font-weight-bold">{profile?.owner}'s reviews</p>
       <hr />
       {profileReviews.results.length ? (
         <InfiniteScroll

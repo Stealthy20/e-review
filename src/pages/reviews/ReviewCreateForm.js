@@ -163,7 +163,7 @@ function ReviewCreateForm() {
   return (
     <Form onSubmit={handleSubmit}>
       <Row>
-        <Col md={"7"} lg={"8"}>
+        <Col className="py-2 p-0 p-md-2"  md={"7"} lg={"8"}>
           <Container className={`${appStyles.Content} ${styles.Container}`}>
             <Form.Group className="text-center">
               {image ? (
@@ -173,7 +173,7 @@ function ReviewCreateForm() {
                   </figure>
                   <div>
                     <Form.Label
-                      className={`${btnStyles.Button} btn`}
+                      className={btnStyles.Button}
                       htmlFor="image-upload"
                     >
                       Change the image
