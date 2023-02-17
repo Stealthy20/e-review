@@ -17,7 +17,6 @@ const Review = (props) => {
     title,
     category,
     rating,
-    content,
     image,
     updated_at,
     reviewPage,
