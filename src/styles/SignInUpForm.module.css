@@ -1,44 +1,54 @@
 .Row {
-    height: calc(100vh);
+    height: calc(50vh);
+    background-image: url("../assets/background_login.jpg");
+    background-repeat: no-repeat, repeat;
+    background-position: center;
+    background-size: cover;
+    
   }
   .Input {
-    background: #ffffff;
-    border: 1px solid #f0f1f9;
+    background: #fafafa;
+    border: 3px solid rgb(18 16 25);
     box-sizing: border-box;
     border-radius: 2px;
-    color: red;
+    font-weight: bold;
+    color: rgb(18 16 25);
     text-align: left;
     padding: 10px;
   }
   
   .Header {
- 
-    line-height: 19px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 30px;
     text-align: center;
-    
+    letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: red;
+    margin-bottom: 25px;
   }
   
   .Link {
-    text-decoration: none;
+    color: rgb(18 16 25);
     text-align: left;
     display: block;
     margin: auto;
+    font-weight: bolder;
+    font-size: 1.1rem;
   }
   
   .Link span {
-    color: red;
+    color: rgb(18 16 25);
   }
   
   .Container {
-    
+    padding: 30px 10px;
   }
   
   .SignInCol {
-   
+    height: 320px;
   }
   
   .SignUpCol {
-   
+    height: 375px;
   }

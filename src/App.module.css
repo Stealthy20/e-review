@@ -9,10 +9,17 @@
 }
 
 .Content {
-  background-color: #fafafa;
+  background-color: transparent;
   padding: 10px;
   border-radius: 2px;
-  border: 1px solid #fafafa;
+  border: 1px solid rgb(18 16 25);
+}
+
+.ContentLink {
+  border: 1px solid rgb(18 16 25);
+  background-color: #fafafa;
+  line-height: 30px;
+  text-decoration: none;
 }
 
 .FillerImage {
