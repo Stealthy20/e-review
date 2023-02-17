@@ -35,7 +35,6 @@ function ReviewCreateForm() {
 
   const imageInput = useRef(null);
   const history = useHistory();
-  
 
   const handleChange = (event) => {
     setReviewData({
@@ -153,10 +152,10 @@ function ReviewCreateForm() {
         className={`${btnStyles.Button}`}
         onClick={() => history.goBack()}
       >
-        cancel
+        Cancel
       </Button>
       <Button className={`${btnStyles.Button}`} type="submit">
-        create
+        Create
       </Button>
     </div>
   );
@@ -164,22 +163,25 @@ function ReviewCreateForm() {
   return (
     <Form onSubmit={handleSubmit}>
       <Row>
-        <Col className="" md={""} lg={""}>
-          <Container className={``}>
-            <Form.Group className="">
+        <Col md={"7"} lg={"8"}>
+          <Container className={`${appStyles.Content} ${styles.Container}`}>
+            <Form.Group className="text-center">
               {image ? (
                 <>
                   <figure>
-                    <Image className={""} src={image} rounded />
+                    <Image className={appStyles.Image} src={image} rounded />
                   </figure>
                   <div>
-                    <Form.Label className={``} htmlFor="image-upload">
+                    <Form.Label
+                      className={`${btnStyles.Button} btn`}
+                      htmlFor="image-upload"
+                    >
                       Change the image
                     </Form.Label>
                   </div>
                 </>
               ) : (
-                <Form.Label className="" htmlFor="image-upload">
+                <Form.Label htmlFor="image-upload">
                   <Asset
                     src={Upload}
                     message="Click or tap to upload an image"
@@ -198,7 +200,7 @@ function ReviewCreateForm() {
                 {message}
               </Alert>
             ))}
-            <div className="">{textFields}</div>
+            <div>{textFields}</div>
           </Container>
         </Col>
       </Row>
