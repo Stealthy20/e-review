@@ -55,7 +55,7 @@ const NavBar = () => {
         <i className="fas fa-sign-out-alt"></i>Sign out
       </NavLink>
       <NavLink
-        className={styles.NavLink}
+        className={`text-capitalize ${styles.NavLink}`}
         to={`/profiles/${currentUser?.profile_id}`}
       >
         <div>

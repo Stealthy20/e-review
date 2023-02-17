@@ -12,14 +12,22 @@
   }
   
   .Keep {
-    color: black;
+    color: rgb(18 16 25);
   }
   
   .Keep:hover {
-    color: gray;
+    color: #4d4d4d;
   }
   
   .KeepOutline:hover {
     color: grey;
   }
   
+  .Rating {
+    color: rgb(245 189 0);
+    font-size: 1.2rem;
+    position: relative;
+    top: -3px;
+    left: -8px
+
+  }

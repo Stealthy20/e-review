@@ -34,39 +34,28 @@ const Review = (props) => {
 
   function useConfirm(message, onConfirm, onAbort) {
     const confirm = () => {
-      if(window.confirm(message))
-        onConfirm();
-      else
-        onAbort();
-    }
-    return confirm
+      if (window.confirm(message)) onConfirm();
+      else onAbort();
+    };
+    return confirm;
   }
 
   const doDelete = () => handleDelete();
   const handleAbort = () => handleCancel();
-  const confirmDelete = useConfirm(
-    'Sure?',
-    doDelete,
-    handleAbort,
-  );
+  const confirmDelete = useConfirm("Sure?", doDelete, handleAbort);
 
-  const handleCancel = () =>{
+  const handleCancel = () => {
     useConfirm.close();
-  }
-
-  
-  const handleDelete = async () => {
-  
-      try {
-       
-        await axiosRes.delete(`/reviews/${id}/`);
-        history.goBack();
-        
-      } catch (err) {
-        console.log(err);
-      }
   };
-  
+
+  const handleDelete = async () => {
+    try {
+      await axiosRes.delete(`/reviews/${id}/`);
+      history.goBack();
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   const handleKeep = async () => {
     try {
@@ -74,9 +63,7 @@ const Review = (props) => {
       setReviews((prevReviews) => ({
         ...prevReviews,
         results: prevReviews.results.map((review) => {
-          return review.id === id
-            ? { ...review, keep_id: data.id }
-            : review;
+          return review.id === id ? { ...review, keep_id: data.id } : review;
         }),
       }));
     } catch (err) {
@@ -90,9 +77,7 @@ const Review = (props) => {
       setReviews((prevReviews) => ({
         ...prevReviews,
         results: prevReviews.results.map((review) => {
-          return review.id === id
-            ? { ...review, keep_id: null }
-            : review;
+          return review.id === id ? { ...review, keep_id: null } : review;
         }),
       }));
     } catch (err) {
@@ -103,12 +88,12 @@ const Review = (props) => {
   return (
     <Card className={styles.Review}>
       <Card.Body>
-        <Media className="">
+        <Media className="align-items-center justify-content-between text-capitalize font-weight-bold">
           <Link to={`/profiles/${profile_id}`}>
             <Avatar src={profile_image} height={55} />
             {owner}
           </Link>
-          <div className="">
+          <div className="d-flex align-items-center">
             <span>{updated_at}</span>
             {is_owner && reviewPage && (
               <MoreDropdown
@@ -123,10 +108,16 @@ const Review = (props) => {
         <Card.Img src={image} alt={title} />
       </Link>
       <Card.Body>
-        {title && <Card.Title className="">{title}</Card.Title>}
-        {category && <Card.Title className="">{category}</Card.Title>}
-        {rating && <Card.Title className="">{rating} <i className="fas fa-star "/></Card.Title>}
-        {content && <Card.Text>{content}</Card.Text>}
+        {title && <Card.Title className="text-center">{title}</Card.Title>}
+        {category && (
+          <Card.Title className="text-center">Category: {category}</Card.Title>
+        )}
+        {rating && (
+          <Card.Title className="text-center">
+            Rating: {rating} <i className={`fas fa-star ${styles.Rating}`} />
+          </Card.Title>
+        )}
+
         <div className={styles.ReviewBar}>
           {is_owner ? (
             <OverlayTrigger
@@ -151,7 +142,6 @@ const Review = (props) => {
               <i className="fas fa-floppy-disk" />
             </OverlayTrigger>
           )}
-          
         </div>
       </Card.Body>
     </Card>
