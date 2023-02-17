@@ -10,7 +10,6 @@ import Avatar from "./Avatar";
 import axios from "axios";
 import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
 import { removeTokenTimestamp } from "../utils/utils";
-import { ProfileEditDropdown } from "./MoreDropdown";
 
 const NavBar = () => {
   const currentUser = useCurrentUser();
@@ -59,7 +58,7 @@ const NavBar = () => {
         to={`/profiles/${currentUser?.profile_id}`}
       >
         <div>
-          <ProfileEditDropdown />
+          
           <Avatar
             src={currentUser?.profile_image}
             text={currentUser?.username}

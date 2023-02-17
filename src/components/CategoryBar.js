@@ -75,7 +75,7 @@ const CategoryBar = (props) => {
           </Nav.Item>
           </Nav>
           </div>
-          <Dropdown className="d-md-none" as={NavItem}>
+          <Dropdown className={`d-md-none ${styles.DropDownSmall}`} as={NavItem}>
             <Dropdown.Toggle className="font-weight-bold" as={NavLink}>Categories</Dropdown.Toggle>
             <Dropdown.Menu>
               <Dropdown.Item

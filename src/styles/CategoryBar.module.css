@@ -16,8 +16,10 @@
   
 }
 
-/* On screens that are 365px or less, set the background color to blue
+/* On screens that are 365px or less, set the background color to blue */
 @media screen and (max-width: 365px) {
-  margin-top: 100px;
-} */
+  .DropDownSmall {
+    padding-top: 45px;
+  }
+}
 
