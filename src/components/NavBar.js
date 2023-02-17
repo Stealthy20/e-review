@@ -28,13 +28,18 @@ const NavBar = () => {
     }
   };
 
+  const handleRedirect = () => {
+    window.location.href =
+      "https://3000-stealthy20-ereview-q45f1xnmduk.ws-eu87.gitpod.io/";
+  };
+
   const addReviewIcon = (
     <NavLink
       className={styles.NavLink}
       activeClassName={styles.Active}
       to="/reviews/create"
     >
-      <i className="far fa-plus-square"></i>New 
+      <i className="far fa-plus-square"></i>New
     </NavLink>
   );
   const loggedInIcons = (
@@ -55,8 +60,11 @@ const NavBar = () => {
       >
         <div>
           <ProfileEditDropdown />
-          <Avatar src={currentUser?.profile_image} text={currentUser?.username} height={40} />
-  
+          <Avatar
+            src={currentUser?.profile_image}
+            text={currentUser?.username}
+            height={40}
+          />
         </div>
       </NavLink>
     </>
@@ -88,7 +96,7 @@ const NavBar = () => {
       fixed="top"
     >
       <Container>
-        <NavLink to="/" onClick={() => window.location.reload()}>
+        <NavLink push to="/" onClick={handleRedirect}>
           <Navbar.Brand>
             <h1>E-Review</h1>
           </Navbar.Brand>
@@ -103,7 +111,7 @@ const NavBar = () => {
           <Nav className="m-auto text-left">
             <NavLink
               exact
-              onClick={() => window.location.reload()}
+              onClick={handleRedirect}
               className={styles.NavLink}
               activeClassName={styles.Active}
               to="/"
