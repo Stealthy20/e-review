@@ -150,12 +150,12 @@ function ReviewCreateForm() {
         </Alert>
       ))}
       <Button
-        className={``}
+        className={`${btnStyles.Button}`}
         onClick={() => history.goBack()}
       >
         cancel
       </Button>
-      <Button className={``} type="submit">
+      <Button className={`${btnStyles.Button}`} type="submit">
         create
       </Button>
     </div>
