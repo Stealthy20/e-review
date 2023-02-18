@@ -27,7 +27,23 @@
     letter-spacing: 0.2em;
     text-transform: uppercase;
     margin-bottom: 25px;
+    color: rgb(18 16 25);
+    margin-top: -90px;
   }
+
+  .HeaderSignUp {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 30px;
+    text-align: center;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    color: rgb(18 16 25);
+    margin-top: -50px;
+  }
+  
   
   .Link {
     color: rgb(18 16 25);

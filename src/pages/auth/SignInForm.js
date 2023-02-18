@@ -51,9 +51,9 @@ function SignInForm() {
   };
 
   return (
-    <Row className={styles.Row}>
-      <Col className="my-auto p-0 p-md-2" md={12}>
-        <Container className={`${appStyles.Content} p-4 `}>
+    <Row className={`border d-flex align-items-center justify-content-center ${styles.Row}`}>
+      <Col md={6}>
+        <Container className={appStyles.Content}>
           <h1 className={styles.Header}>sign in</h1>
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="username">
@@ -108,11 +108,7 @@ function SignInForm() {
           </Link>
         </Container>
       </Col>
-      <Col
-        className={`my-auto d-none d-md-block p-2 ${styles.SignInCol}`}
-      >
-       
-      </Col>
+   
     </Row>
   );
 }
