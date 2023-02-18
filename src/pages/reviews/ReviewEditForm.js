@@ -168,7 +168,7 @@ function ReviewEditForm() {
         Cancel
       </Button>
       <Button className={`${btnStyles.Button}`} type="submit">
-        Create
+        Save
       </Button>
     </div>
   );

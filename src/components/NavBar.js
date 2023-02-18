@@ -10,10 +10,12 @@ import Avatar from "./Avatar";
 import axios from "axios";
 import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
 import { removeTokenTimestamp } from "../utils/utils";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const NavBar = () => {
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
+  const history = useHistory()
 
   const { expanded, setExpanded, ref } = useClickOutsideToggle();
 
@@ -28,8 +30,8 @@ const NavBar = () => {
   };
 
   const handleRedirect = () => {
-    window.location.href =
-      "https://3000-stealthy20-ereview-q45f1xnmduk.ws-eu87.gitpod.io/";
+    history.push("/")
+    window.location.reload()
   };
 
   const addReviewIcon = (
