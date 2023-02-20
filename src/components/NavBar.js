@@ -1,5 +1,7 @@
 import React from "react";
-import { Navbar, Container, Nav } from "react-bootstrap";
+import Navbar from "react-bootstrap/Navbar";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
 import styles from "../styles/NavBar.module.css";
 import { NavLink } from "react-router-dom";
 import {
@@ -97,7 +99,7 @@ const NavBar = () => {
       fixed="top"
     >
       <Container>
-        <NavLink push to="/" onClick={handleRedirect}>
+        <NavLink to="/" onClick={handleRedirect}>
           <Navbar.Brand>
             <h1>E-Review</h1>
           </Navbar.Brand>

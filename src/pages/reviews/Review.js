@@ -1,7 +1,13 @@
 import React from "react";
 import styles from "../../styles/Review.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
-import { Card, Media, OverlayTrigger, Tooltip } from "react-bootstrap";
+import  Tooltip from "react-bootstrap/Tooltip";
+import Card from "react-bootstrap/Card";
+import Media from "react-bootstrap/Media";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+// import Tooltip from from "react-bootstrap/Tooltip";
+// import OverlayTrigger from from "react-bootstrap/OverlayTrigger";
+// import Media from from "react-bootstrap/Media";
 import { Link, useHistory } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
