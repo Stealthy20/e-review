@@ -6,7 +6,7 @@ import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
-import Review from "./Review";
+import ReviewFeed from "./ReviewFeed";
 import Asset from "../../components/Asset";
 
 import appStyles from "../../App.module.css";
@@ -73,7 +73,7 @@ function ReviewsPage({ message, filter = "", profile_id, setFilter}) {
             {reviews.results.length ? (
               <InfiniteScroll
                 children={reviews.results.map((review) => (
-                  <Review key={review.id} {...review} setReviews={setReviews} />
+                  <ReviewFeed key={review.id} {...review} setReviews={setReviews} />
                 ))}
                 dataLength={reviews.results.length}
                 loader={<Asset spinner />}

@@ -11,7 +11,7 @@ import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
 import { MoreDropdown } from "../../components/MoreDropdown";
 
-const Review = (props) => {
+const ReviewFeed = (props) => {
   const {
     id,
     owner,
@@ -19,7 +19,6 @@ const Review = (props) => {
     profile_image,
     keep_id,
     title,
-    content,
     category,
     rating,
     image,
@@ -122,7 +121,7 @@ const Review = (props) => {
           </Card.Title>
           
         )}
-        {content && <Card.Text>{content}</Card.Text>}
+        
 
         <div className={styles.ReviewBar}>
           {is_owner ? (
@@ -154,4 +153,4 @@ const Review = (props) => {
   );
 };
 
-export default Review;
+export default ReviewFeed;
