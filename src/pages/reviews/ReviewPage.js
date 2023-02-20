@@ -42,10 +42,10 @@ function ReviewPage() {
   }, [id]);
 
   return (
-    <Row className="">
-      <Col className="" lg={8}>
+    <Row className="h-100">
+      <Col className="py-2 p-0 p-lg-2" lg={8}>
         <Review {...review.results[0]} setReviews={setReview} reviewPage />
-        <Container className={""}>
+        <Container className={appStyles.Content}>
           {currentUser ? (
             <CommentCreateForm
               profile_id={currentUser.profile_id}

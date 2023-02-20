@@ -5,14 +5,15 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import Review from "./Review";
 import Asset from "../../components/Asset";
 
 import appStyles from "../../App.module.css";
 import styles from "../../styles/ReviewsPage.module.css";
+
 import { useLocation } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
-
 import NoResults from "../../assets/no-results.png";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
@@ -21,6 +22,7 @@ function ReviewsPage({ message, filter = "", profile_id, setFilter}) {
   const [reviews, setReviews] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
+  const currentUser = useCurrentUser();
 
 
   const [query, setQuery] = useState("");
@@ -47,7 +49,7 @@ function ReviewsPage({ message, filter = "", profile_id, setFilter}) {
       clearTimeout(timer);
     };
 
-  }, [filter, query, pathname]);
+  }, [filter, query, pathname, currentUser]);
 
   return (
     <Row className="h-100">
