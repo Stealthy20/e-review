@@ -53,7 +53,6 @@ const ProfileEditForm = () => {
 
 
   const handleSubmit = async (event) => {
-    let isMounted = true;
     event.preventDefault();
     const formData = new FormData();
     formData.append("name", name);
@@ -73,9 +72,6 @@ const ProfileEditForm = () => {
       console.log(err);
       setErrors(err.response?.data);
     }
-    return () => {
-      isMounted = false;
-  }
   };
 
   const textFields = (
