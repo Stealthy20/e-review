@@ -28,14 +28,13 @@ function ReviewsPage({ message, filter = "", profile_id, setFilter}) {
   useEffect(() => {
     const fetchReviews = async () => {
       try {
-        console.log(filter);
         const { data } = await axiosReq.get(
           `/reviews/?${filter}search=${query}`
         );
         setReviews(data);
         setHasLoaded(true);
       } catch (err) {
-        console.log(err);
+        // console.log(err);
       }
     };
 
