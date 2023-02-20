@@ -17,9 +17,7 @@ const SignUpForm = () => {
     password2: "",
   });
   const { username, password1, password2 } = signUpData;
-
   const [errors, setErrors] = useState({});
-
   const history = useHistory();
 
   const handleChange = (event) => {
@@ -40,7 +38,9 @@ const SignUpForm = () => {
   };
 
   return (
-    <Row className={`border d-flex align-items-center justify-content-center ${styles.Row}`}>
+    <Row
+      className={`border d-flex align-items-center justify-content-center ${styles.Row}`}
+    >
       <Col md={6}>
         <Container className={appStyles.Content}>
           <h1 className={styles.HeaderSignUp}>sign up</h1>
@@ -117,7 +117,6 @@ const SignUpForm = () => {
           </Link>
         </Container>
       </Col>
-      
     </Row>
   );
 };
