@@ -33,7 +33,7 @@ function App() {
             path="/"
             render={() => (
               <Fragment>
-                <CategoryBar />
+                <CategoryBar setFilter={setFilter}/>
                 <ReviewsPage
                   setFilter={setFilter}
                   filter={filter}

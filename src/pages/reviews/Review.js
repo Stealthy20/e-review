@@ -122,7 +122,7 @@ const Review = (props) => {
           </Card.Title>
           
         )}
-        {content && <Card.Text>{content}</Card.Text>}
+        {content && <Card.Text className="text-left">{content}</Card.Text>}
 
         <div className={styles.ReviewBar}>
           {is_owner ? (
