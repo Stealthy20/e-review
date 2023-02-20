@@ -15,6 +15,9 @@ const CategoryBar = (props) => {
 
   return (
     <div>
+
+      {/* Main bar that shows on larger screen sizes */}
+      
       <div className={`d-none d-md-block ${styles.CategoryBar}`}>
         <Nav defaultActiveKey="/home" as="ul">
           <Nav.Item as="li">
@@ -75,6 +78,9 @@ const CategoryBar = (props) => {
           </Nav.Item>
           </Nav>
           </div>
+          
+          {/* Drop down for the categorybar that replaces the bar when screensize gets smaller */}
+
           <Dropdown className={`d-md-none ${styles.DropDownSmall}`} as={NavItem}>
             <Dropdown.Toggle className="font-weight-bold" as={NavLink}>Categories</Dropdown.Toggle>
             <Dropdown.Menu>
