@@ -5,9 +5,7 @@ import  Tooltip from "react-bootstrap/Tooltip";
 import Card from "react-bootstrap/Card";
 import Media from "react-bootstrap/Media";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
-// import Tooltip from from "react-bootstrap/Tooltip";
-// import OverlayTrigger from from "react-bootstrap/OverlayTrigger";
-// import Media from from "react-bootstrap/Media";
+
 import { Link, useHistory } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
@@ -21,6 +19,7 @@ const Review = (props) => {
     profile_image,
     keep_id,
     title,
+    content,
     category,
     rating,
     image,
@@ -47,7 +46,7 @@ const Review = (props) => {
 
   const doDelete = () => handleDelete();
   const handleAbort = () => handleCancel();
-  const confirmDelete = useConfirm("Sure?", doDelete, handleAbort);
+  const confirmDelete = useConfirm("Do you want to delete?", doDelete, handleAbort);
 
   const handleCancel = () => {
     useConfirm.close();
@@ -121,7 +120,9 @@ const Review = (props) => {
           <Card.Title className="text-center">
             Rating: {rating} <i className={`fas fa-star ${styles.Rating}`} />
           </Card.Title>
+          
         )}
+        {content && <Card.Text className="d-none">{content}</Card.Text>}
 
         <div className={styles.ReviewBar}>
           {is_owner ? (

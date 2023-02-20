@@ -24,7 +24,7 @@ function App() {
   const [filter, setFilter] = useState("");
 
   return (
-    <div className={""}>
+    <div>
       <NavBar />
       <Container className={styles.Main}>
         <Switch>
@@ -33,7 +33,7 @@ function App() {
             path="/"
             render={() => (
               <Fragment>
-                <CategoryBar setFilter={setFilter} />
+                <CategoryBar />
                 <ReviewsPage
                   setFilter={setFilter}
                   filter={filter}

@@ -37,7 +37,7 @@ const Comment = (props) => {
   const doDelete = () => handleDelete();
   const handleAbort = () => handleCancel();
   const confirmDelete = useConfirm(
-    'Sure?',
+    'Do you want to delete?',
     doDelete,
     handleAbort,
   );
