@@ -97,22 +97,30 @@ To be sure that my project was launched with a ready-to-use site I opted to divi
 ## **The Structure Plane**
 
 #### **Colors**
+I opted for a multi colored navbar to give the site some more life. 
 
-
-
-#### **Fonts**
-
+For the rest i went with rgb(18 16 25) Black with the #FAFAFA white as the contrast color to keep it easy on the eyes.
 
 
 #### **Key Models**
 
 **Review**
-- 
+- This is the main model that lets the users create reviews
+- Holds all the important information for the review
+- It's connected to the imported user model
 
 **Comment**
--
+- This model holds the content for the comment
+- It's connected to the review and user
 
 **Keep**
+- This model Save model is related to 'owner' and 'review'.
+- Opted for rename it to Keep to not confuse it for the word save in the code.
+
+**Profiles**
+- Profile model related to "owner"
+- Hold the username 
+
 ---
 
 ## **The Skeleton Plane**
