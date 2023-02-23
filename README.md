@@ -1,16 +1,21 @@
-# **Grocery Shopping List**
+# **E-Review a review site for electronic products**
 
-[Grocery Shopping List Live Site](https://stealthy-grocery-shopping-list.herokuapp.com/)
+[E-Review Live Site](https://e-review.herokuapp.com/)
 
-![View of Grocery Shopping List on all devices](docs/mockup.png "Mockup of the site on different devices")
+![View of Grocery Shopping List on all devices](src/docs/mockup.PNG "Mockup of the site on different devices")
 
 ## **Introduction**
+Welcome to E-Review a review site for electronic products. 
+My fifth and last project for the Full Stack Web Developer Course.
 
+This website goal is to help user's find reviews on products that they are interested in purchasing. 
+Or for users that only want to browse reviews in its feed like layout. 
 
 ---
 
 ## **UXD - User Experience Design**
-
+This project is planned for a user that wants to come to a site to browse reviews on various products, and see what other consumers really think about them.
+I feel like it is a spot to fill where actual consumers reviews the products from a consumer perspective in a feed like manner for others to browse.
 
 
 The project's planning is divided into 5 planes,
@@ -24,11 +29,41 @@ The project's planning is divided into 5 planes,
 
 ## **The Strategy Plane**
 
-### **Creator Goals**
+### **Navigation & Authentication**
+- Navigation: As a user I can view a navbar from every page so that I can navigate easily between pages
+- Routing: As a user I can navigate through pages quickly so that I can view content seamlessly without page refresh
+- Authentication - Sign up: As a user I can create a new account so that I can access all the features for signed up users
+- Authentication - Sign in: As a user I can sign in to the app so that I can access functionality for logged in users
+- Authentication - Logged in Status: As a user I can tell if I am logged in or not so that I can log in if I need to
+- Authentication - Refreshing access tokens: As a user I can maintain my logged-in status until I choose to log out so that my user experience is not compromised
+- Navigation: Conditional rendering - As a logged out user I can see sign in and sign up options so that I can sign in/sign up
+- Avatar: As a user I can view user's avatars so that I can easily identify users of the application
 
+#### **Adding & Saving Reviews**
+- Create a Review: As a logged in user I can create reviews so that I can share it to other consumers
+- View a Review: As a user I can view the review to read more about what the reviewer thinks
+- Save a post: As a logged in user I can save a review so that I can save it to easily find it again
 
-#### **User Stories**
+#### **The Review Feed**
+- View most recent reviews: As a user I can view all the most recent reviews, ordered by most recently created first so that I am up to date with the newest content
+- As a user, I can search for reviews with keywords, so that I can find the reviews and user profiles I want to read more about.
+- View saved reviews: As a logged in user I can view the reviews I saved so that I can find the reviews i liked the most
+- Infinite scroll: As a user I can keep scrolling through the reviews on the site, that are loaded for me automatically so that I don't have to click on "next page" etc
 
+#### **The Review Page**
+- Review page: As a user I can view the review page so that I can read the comments about the post
+- Edit Review: As a review owner I can edit my post title and description so that I can make corrections or update my review after it was created
+- Create a comment: As a logged in user I can add comments to a review so that I can share my thoughts about the review
+- Comment date: As a user I can see how long ago a comment was made so that I know how old a comment is
+- View comments: As a user I can read comments on reviews so that I can read what other users think about the review
+- Delete comments: As an owner of a comment I can delete my comment so that I can control removal of my comment from the application
+- Edit a comment: As an owner of a comment I can edit my comment so that I can fix or update my existing comment
+
+#### **The Profile Page**
+- Profile page: As a user I can view other users profiles so that I can see all their reviews
+- View all reviews by a specific user: As a user I can view all the reviews by a specific user so that I can read about other products that they have reviewed
+- Edit profile: As a logged in user I can edit my profile so that I can change my profile picture
+- Update username and password: As a logged in user I can update my username and password so that I can change my display name and keep my profile secure
 
 ---
 
@@ -38,15 +73,25 @@ To be sure that my project was launched with a ready-to-use site I opted to divi
 
 **Phase 1**
 - A project that would be good enough to use.
- 
+    - The feed page where users can find the reviews
+    - The Navbar so that the users easily can navigate the page
+    - New review so logged in users can make reviews
+    - The ability to edit and delete reviews
+    - Sign up and login function
+    - Comment function so user can comment on reviews
+    - The ability to edit and delete comments
 
 **Phase 2**
 - Building upon the Phase 1 project with additional features.
-    - 
+    - Profile page to display all the reviews of that user
+    - Saved tabs so logged in users can save their favorite reviews
+    - Feed filter to filter reviews into categories
+    - Popups to validate before deletion of comments and reviews
 
 **Phase 3**
 - My final planned phase was to implement functionality that made it easier for the user(these are not yet implemented).
-    -
+    - Sign up with social media accounts
+    - Password recovery
 ---
 
 ## **The Structure Plane**
