@@ -20,7 +20,7 @@ import {
 } from "../../contexts/ProfileDataContext";
 import { Image } from "react-bootstrap";
 import InfiniteScroll from "react-infinite-scroll-component";
-import Review from "../reviews/Review";
+import ReviewFeed from "../reviews/ReviewFeed";
 import { fetchMoreData } from "../../utils/utils";
 import NoResults from "../../assets/no-results.png";
 
@@ -89,7 +89,7 @@ function ProfilePage() {
       {profileReviews.results.length ? (
         <InfiniteScroll
           children={profileReviews.results.map((review) => (
-            <Review
+            <ReviewFeed
               key={review.id}
               {...review}
               setReviews={setProfileReviews}

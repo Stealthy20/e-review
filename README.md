@@ -130,7 +130,7 @@ I tried to make the computer and mobile versions as similar as I could.
 
 So, this is my initial project layout in its most basic form.
 
-![Site Wireframe](docs/wireframes.JPG "Image of the wireframes")
+![Site Wireframe](src/docs/wireframe.PNG "Image of the wireframes")
 ---
 
 ## **The Surface Plane**
@@ -143,14 +143,32 @@ So, this is my initial project layout in its most basic form.
 - Navbar is implemented on every page and is fully responsive across all resolutions.
 - Users can navigate across the site freely as long as they are signed in.
 
-![Project Navigation Bar](docs/navbar.png "Image of the navigation bar")
+![Project Navigation Bar](src/docs/navbar.PNG "Image of the navigation bar")
 
-**Introduction**
-- The home page features an introduction to notify users to welcome them and explain the purpose of the site.
+**Categorybar**
+- The categorybar that lets the users filter the feed after categories.
 
-![Project Introduction](docs/intro.png "Image of the Introduction")
+![CategoryBar](src/docs/categorybar.PNG "Image of the Categorybar")
 
+**Searchbar**
+- The searchbar that lets the users search for reviews or users
 
+![Searchbar](src/docs/searchbar.PNG "Image of the searchbar")
+
+**The Feed**
+- The feed if reviews that welcomes the users when they enters the site
+
+![The feed](src/docs/feed.PNG "Image of the feed")
+
+**The Review Page**
+- The review page, where users can read the review text and comment
+
+![The review page](src/docs/review.PNG "Image of the review page")
+
+**The Review Page**
+- The review page, where users can read the review text and comment
+
+![The profile page](src/docs/review.PNG "Image of the review page")
 
 ## **Technologies Used**
 
