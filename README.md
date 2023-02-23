@@ -198,6 +198,8 @@ So, this is my initial project layout in its most basic form.
 
 - [JSX](https://reactjs.org/docs/introducing-jsx.html)
 
+- [Cloudinary](https://cloudinary.com/)
+
 - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
 
 - [CSS](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics)
@@ -228,6 +230,8 @@ Link to the Testing Document
 
 ## **Deployment**
 
+**The DRF Repository**
+
 The main branch of this repository is the most current version and has been used for the deployed version of the site.
 
 The Code Institiue student template was used to create this project.
@@ -251,7 +255,7 @@ Use the following commands to commit your work,
 2. In the *Clone >> HTTPS* section, copy the clone URL for the repository
 3. In your local IDE open Git Bash
 4. Change the current working directory to the location where you want the cloned directory to be made
-5. Type `git clone`, and then paste the URL you copied in Step 2 - ``git clone https://github.com/Harry-Leepz/Nourish-and-Lift.git``
+5. Type `git clone`, and then paste the URL you copied in Step 2 -
 6. Set the following values in a `env.py` file.
 ```
 import os
@@ -266,7 +270,7 @@ os.environ["CLOUDINARY_URL"] = "cloudinary key"
 9. Create a superuser - `python manage.py createsuperuser`
 10. The project can be run with the following - `python manage.py runserver`
 
-**Heroku Deployment**
+**Heroku Deployment DRF**
 
 1. Log into Heroku
 2. Create a new app, choose a location closest to you
@@ -307,6 +311,50 @@ git push
 ```
 18. Your deployed site can be launched by clicking `Open App` from its page within Heroku.
 
+**The React Repository**
+1. Start a new repository from GitHub
+2. Give your repository a name, and description if you wish.
+3. Click the *Create Repository* to create your repository. 
+4. Click the *Gitpod* button to create a gitpod workspace, this can take a few minutes.
+5. When working on project using Gitpod, please open the workspace from Gitpod, this will open your previous workspace rather than creating a new one.
+Use the following commands to commit your work, 
+```
+`git add . ` - adds all modified files to a staging area.
+`git commit -m "A short message explaining your commit"` - commits all changes to a local repository.
+`git push` - pushes all your commited changes to your Github repository.
+```
+6. Install React with the following code in the terminal 
+```
+npx create-react-app . --use-npm
+```
+7. Install React Bootstrap with the following code in the terminal
+```
+npm install react-bootstrap@1.6.3 bootstrap@4.6.0
+```
+**Heroku Deployment React**
+1. Log into Heroku
+2. Create a new app, choose a location closest to you
+3. Make sure to add the following prebuild command into your package.json file in the "scripts" section
+```
+"heroku-prebuild": "npm install -g serve",
+```
+4. Add a Procfile at the root of the project with the following web command:
+```
+web: serve -s build
+```
+5. Make sure that you added the following config vars to your DRF project
+```
+CLIENT_ORIGIN = "Your React app URL"
+```
+6. Connect Heroku to you Github, by selecting Github as the deployment method and search for the github repository and pressing `connect`
+7. Go back to the Deploy tab and under Automatic deploys choose `Enable Automatic Deploys`
+8. Back in your CLI add, commit and push your changes and Heroku will automatically deploy your app
+```
+git add .
+git commit -m "Initial commit"
+git push
+```
+9. Your deployed site can be launched by clicking `Open App` from its page within Heroku.
 ---
 
 ## **Credits**
