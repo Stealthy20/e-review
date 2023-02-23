@@ -173,34 +173,36 @@ So, this is my initial project layout in its most basic form.
 ## **Technologies Used**
 
 - [Python](https://www.python.org/) 
-    - The following Python modules were used on this project, 
-    - asgiref==3.5.2
-    - cloudinary==1.30.0
-    - dj-database-url==1.0.0
-    - dj3-cloudinary-storage==0.0.6
-    - Django==3.2.16
-    - django-allauth==0.51.0
+    - asgiref==3.6.0
+    - cloudinary==1.31.0
+    - dj-database-url==1.2.0
+    - dj-rest-auth==2.2.7
+    - Django==3.2.17
+    - django-allauth==0.52.0
+    - django-cloudinary-storage==0.3.0
+    - django-cors-headers==3.13.0
     - django-filter==22.1
+    - djangorestframework==3.14.0
+    - djangorestframework-simplejwt==5.2.2
     - gunicorn==20.1.0
     - oauthlib==3.2.2
+    - Pillow==9.4.0
     - psycopg2==2.9.5
     - PyJWT==2.6.0
     - python3-openid==3.2.0
-    - pytz==2022.6
+    - pytz==2022.7.1
     - requests-oauthlib==1.3.1
     - sqlparse==0.4.3
 
-- [ElephatnSQL](https://www.elephantsql.com/)
+- [React](https://reactjs.org/)
 
-- [Allauth](https://django-allauth.readthedocs.io/en/latest/)
- 
+- [JSX](https://reactjs.org/docs/introducing-jsx.html)
+
 - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
 
 - [CSS](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics)
 
-- [Bootstrap](https://getbootstrap.com/)
-
-- [jQuery](https://jquery.com/)
+- [React-Bootstrap](https://react-bootstrap.github.io/)
 
 - [Google Developer Tools](https://developers.google.com/web/tools/chrome-devtools)
 
@@ -310,4 +312,7 @@ git push
 ## **Credits**
 
 **Code**
+- Base of the project is from the walkthrough projects in Code Institute Advanced Frontend Course.
+    - Django REST Framework
+    - Moments
 
