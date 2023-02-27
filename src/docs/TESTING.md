@@ -52,11 +52,14 @@
 - No Errors
 
 
-[JSHint JavaScript Validator](https://jshint.com/)
+[eslint JSX Validator](https://eslint.org/)
 - No Errors
 
 
 [Code Institute Python Validator](https://pep8ci.herokuapp.com/)
 
 - All files created or modified by me where tested. 
-- The following errors where found  
+- The following errors where found 
+
+![Validator Errors](validatordrf.PNG "Image of the validator errors")
+
