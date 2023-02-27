@@ -63,3 +63,46 @@
 
 ![Validator Errors](validatordrf.PNG "Image of the validator errors")
 
+### **Bugs and Fixes**
+
+**Bug1**
+- After attempting to submit the form, I received a 400 bad request error in the console.
+Even if a pre-populated option was present in the field, it wasn't recognized during submission because no changes had been made.
+
+![Bug1](bug1.png "Image of the first bug")
+
+**Fix**
+- Added a empty option before the first one. As a result, the default is an unfilled option that pushes the user to choose.
+
+![Bug1 fix](bug1fix.PNG "Image of the first bug fix")
+
+**Bug 2**
+- Even though the url is correct and matches the path in app.js, the page cannot be found.
+Everything was operational on the DRF side and it had previously functioned.
+
+![Bug1 fix](bug2.PNG "Image of the second bug")
+
+**Fix**
+- Found a typo that occurred when trying to filter my saved reviews.
+Missed a S at the end of review/:id 
+
+![Bug2 fix](bug2fix.PNG "Image of the second bug fix")
+
+**Bug 3**
+- The filter function is working, but when reentering the feed page the filter is still there and the only way to remove it is to refresh the page.
+
+**Fix**
+- Added a relocate to the homepage with reload so filter was reseted
+
+![Bug3 fix](bug3fix.PNG "Image of the third bug fix")
+
+**Bug 4**
+- Flexbox doesn't center content
+
+![Bug4](bug4.PNG "Image of the fourth bug")
+
+**Fix**
+- I found a extra empty column in my code that occupied half the screen
+
+![Bug4 fix](bug4fix.PNG "Image of the fourth bug fix")
+
