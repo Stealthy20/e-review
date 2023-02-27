@@ -359,6 +359,15 @@ git push
 
 ## **Credits**
 
+**Reviews**
+- The existing reviews with pictures is taken from the following sites.
+ - [rtings TV Review](https://www.rtings.com/)
+ - [Ny Times Mobile Phone Review](https://www.nytimes.com/wirecutter/reviews/best-smartphones/)
+ - [Ny Times Tablet Review](https://www.nytimes.com/wirecutter/reviews/best-tablets/)
+ - [Tomsguide Apple TV](https://www.tomsguide.com/reviews/apple-tv-4k-2022/)
+ - [Tomsguide Airpods](https://www.tomsguide.com/reviews/apple-airpods-pro/)
+ - [Tomsguide Apple Pencil](https://www.tomsguide.com/buying-guide/best-apple-pencil-alternatives)
+
 **Code**
 - Base of the project is from the walkthrough projects in Code Institute Advanced Frontend Course.
     - Django REST Framework
